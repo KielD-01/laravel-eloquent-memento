@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace KielD01\LaravelEloquentMemento;
+namespace KielD01\LaravelEloquentMemento\Memento;
 
 /**
  * Class Constants
