@@ -11,7 +11,12 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ModelMementoObserver
 {
-    public function created(Model $model): void
+    public function saving(Model $model): void
+    {
+        $this->process($model, __FUNCTION__);
+    }
+
+    public function creating(Model $model): void
     {
         $this->process($model, __FUNCTION__);
     }
@@ -29,6 +34,7 @@ class ModelMementoObserver
     /**
      * @param Model $model
      * @param string $action
+     * @uses \KielD01\LaravelEloquentMemento\Memento\Traits\HasMemento::processMemento()
      */
     private function process(Model $model, string $action): void
     {
