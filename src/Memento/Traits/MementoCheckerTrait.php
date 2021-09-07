@@ -6,7 +6,7 @@ namespace KielD01\LaravelEloquentMemento\Memento\Traits;
 use Closure;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
-use KielD01\LaravelEloquentMemento\Constants;
+use KielD01\LaravelEloquentMemento\Memento\Constants;
 
 /**
  * Trait MementoCheckerTrait
