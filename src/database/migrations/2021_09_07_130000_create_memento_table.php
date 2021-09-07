@@ -17,7 +17,7 @@ class CreateMementoTable extends Migration
             Schema::create(Constants::DB_MEMENTO_TABLE, static function (Blueprint $table) {
                 $table->id();
                 $table->string('action')->nullable(false);
-                $table->string('memento')->nullable(false);
+                $table->json('memento')->nullable(false);
                 $table->string('mementoable_id')->nullable(false);
                 $table->string('mementoable_type')->nullable(false);
 
