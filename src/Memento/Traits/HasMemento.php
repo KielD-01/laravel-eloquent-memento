@@ -5,7 +5,7 @@ namespace KielD01\LaravelEloquentMemento\Memento\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use KielD01\LaravelEloquentMemento\Models\Memento\Memento;
+use KielD01\LaravelEloquentMemento\Models\Memento;
 
 /**
  * Class HasMemento

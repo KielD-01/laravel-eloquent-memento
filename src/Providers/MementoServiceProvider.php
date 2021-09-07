@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use KielD01\LaravelEloquentMemento\Constants;
+use KielD01\LaravelEloquentMemento\Memento\Constants;
 use KielD01\LaravelEloquentMemento\Observers\ModelMementoObserver;
 
 /**
