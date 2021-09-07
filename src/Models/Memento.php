@@ -16,6 +16,7 @@ use KielD01\LaravelEloquentMemento\Memento\Constants;
  * @property array fillable
  *
  * @property int id
+ * @property string action
  * @property int|string mementoable_id
  * @property string mementoable_type
  * @property Carbon created_at
@@ -34,6 +35,7 @@ class Memento extends Model
         'id',
         'mementoable_id',
         'mementoable_type',
+        'action',
         'memento',
         'created_at',
         'updated_at',
