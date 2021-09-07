@@ -16,12 +16,12 @@ class ModelMementoObserver
         $this->process($model, __FUNCTION__);
     }
 
-    public function updated(Model $model): void
+    public function updating(Model $model): void
     {
         $this->process($model, __FUNCTION__);
     }
 
-    public function deleted(Model $model): void
+    public function deleting(Model $model): void
     {
         $this->process($model, __FUNCTION__);
     }
