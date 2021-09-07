@@ -5,6 +5,7 @@ namespace KielD01\LaravelEloquentMemento\Memento\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use KielD01\LaravelEloquentMemento\Models\Memento;
 
 /**
@@ -26,7 +27,7 @@ trait HasMemento
 
     /** @var array|null */
     protected ?array $memorableFields = null;
-    
+
     public function beforeMemento(): void
     {
         // Reusable method
@@ -49,9 +50,9 @@ trait HasMemento
     }
 
     /**
-     * @return HasMany
+     * @return MorphMany
      */
-    public function mementos(): HasMany
+    public function mementos(): MorphMany
     {
         return $this->morphMany(Memento::class, 'mementoable');
     }
