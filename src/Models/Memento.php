@@ -17,6 +17,7 @@ use KielD01\LaravelEloquentMemento\Memento\Constants;
  *
  * @property int id
  * @property string action
+ * @property array memento
  * @property int|string mementoable_id
  * @property string mementoable_type
  * @property Carbon created_at
@@ -52,5 +53,20 @@ class Memento extends Model
     public function mementoable(): MorphTo
     {
         return $this->morphTo();
+    }
+
+    /**
+     * Restores to the selected Memento snapshot
+     *
+     * @return bool
+     */
+    public function restore(): bool
+    {
+        $targetModel = forward_static_call(
+            [$this->mementoable_type, 'findOrFail'],
+            [$this->mementoable_id]
+        );
+
+        return $targetModel->update($this->memento);
     }
 }
