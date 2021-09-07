@@ -15,7 +15,7 @@ class CreateMementoTable extends Migration
     {
         if (!Schema::hasTable(Constants::DB_MEMENTO_TABLE)) {
             Schema::create(Constants::DB_MEMENTO_TABLE, static function (Blueprint $table) {
-                $table->id()->primary();
+                $table->id();
                 $table->string('action')->nullable(false);
                 $table->string('memento')->nullable(false);
                 $table->string('mementoable_id')->nullable(false);
