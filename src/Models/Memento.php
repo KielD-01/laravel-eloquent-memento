@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace KielD01\LaravelEloquentMemento\Models\Memento;
+namespace KielD01\LaravelEloquentMemento\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
