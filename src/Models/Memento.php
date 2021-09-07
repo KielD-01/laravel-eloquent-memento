@@ -40,6 +40,10 @@ class Memento extends Model
         'deleted_at'
     ];
 
+    protected $casts = [
+        'memento' => 'json'
+    ];
+
     /**
      * @return MorphTo
      */
