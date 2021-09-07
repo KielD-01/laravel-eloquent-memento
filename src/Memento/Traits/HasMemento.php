@@ -26,10 +26,16 @@ trait HasMemento
 
     /** @var array|null */
     protected ?array $memorableFields = null;
+    
+    public function beforeMemento(): void
+    {
+        // Reusable method
+    }
 
-    abstract public function beforeMemento(): void;
-
-    abstract public function afterMemento(): void;
+    public function afterMemento(): void
+    {
+        // Reusable method
+    }
 
     public function onMemento(string $action): void
     {
