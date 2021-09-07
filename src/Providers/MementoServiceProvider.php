@@ -7,6 +7,7 @@ use Exception;
 use HaydenPierce\ClassFinder\ClassFinder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use KielD01\LaravelEloquentMemento\Memento\Constants;
@@ -30,6 +31,10 @@ class MementoServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Config::set('memento.enabled', $this->checkIfCanBeEnabled());
+
+        if (!config('memento.enabled')) {
+            Log::error('Memento table does not exists');
+        }
 
         if (config('memento.enabled')) {
             $this->enableMementoForModels();
