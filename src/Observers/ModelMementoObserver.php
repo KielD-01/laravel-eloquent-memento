@@ -11,16 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class ModelMementoObserver
 {
-    public function saving(Model $model): void
-    {
-        $this->process($model, __FUNCTION__);
-    }
-
-    public function creating(Model $model): void
-    {
-        $this->process($model, __FUNCTION__);
-    }
-
     public function updating(Model $model): void
     {
         $this->process($model, __FUNCTION__);
