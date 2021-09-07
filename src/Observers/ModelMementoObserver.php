@@ -13,19 +13,23 @@ class ModelMementoObserver
 {
     public function created(Model $model): void
     {
-        $this->process($model, __METHOD__);
+        $this->process($model, __FUNCTION__);
     }
 
     public function updated(Model $model): void
     {
-        $this->process($model, __METHOD__);
+        $this->process($model, __FUNCTION__);
     }
 
     public function deleted(Model $model): void
     {
-        $this->process($model, __METHOD__);
+        $this->process($model, __FUNCTION__);
     }
 
+    /**
+     * @param Model $model
+     * @param string $action
+     */
     private function process(Model $model, string $action): void
     {
         if (method_exists($model, 'processMemento')) {
