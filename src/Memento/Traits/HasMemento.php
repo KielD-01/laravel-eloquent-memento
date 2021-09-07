@@ -36,7 +36,7 @@ trait HasMemento
 
         collect($this->getDirty())
             ->each(function ($value, $field) use (&$memento) {
-                $memento[] = $this->getOriginal($field);
+                $memento[$field] = $this->getOriginal($field);
             });
 
         $this->mementos()
